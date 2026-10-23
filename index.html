@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEBAA COFFEE | Artisanal Coffee & Brews</title>
+
+    <!-- PyScript CSS & JS Core (Latest Stable Releases) -->
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="logo">☕ DEBAA COFFEE</div>
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="#order">Order Online</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <h1>Welcome to DEBAA COFFEE</h1>
+        <p>Crafted with passion, brewed to perfection. Experience local specialty coffee at its finest.</p>
+    </section>
+
+    <!-- Menu Display -->
+    <section id="menu" class="container">
+        <h2>Our Featured Brews</h2>
+        <div class="menu-grid">
+            <div class="menu-card">
+                <h3>Debaa Signature Espresso</h3>
+                <p>Rich, full-bodied espresso shot with notes of dark chocolate and caramel.</p>
+                <span class="price">₱120.00</span>
+            </div>
+            <div class="menu-card">
+                <h3>Spanish Latte</h3>
+                <p>Smooth espresso mixed with creamy milk and condensed sweet milk.</p>
+                <span class="price">₱150.00</span>
+            </div>
+            <div class="menu-card">
+                <h3>Iced Caramel Macchiato</h3>
+                <p>Fresh espresso poured over cold milk, vanilla syrup, and caramel drizzle.</p>
+                <span class="price">₱165.00</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive PyScript Order Form -->
+    <section id="order" class="container">
+        <h2>Interactive Order Estimator</h2>
+        <div class="card">
+            <form id="coffee-form">
+                <div class="form-group">
+                    <label for="drink-select">Select Your Drink:</label>
+                    <select id="drink-select">
+                        <option value="120">Debaa Signature Espresso - ₱120</option>
+                        <option value="150">Spanish Latte - ₱150</option>
+                        <option value="165">Iced Caramel Macchiato - ₱165</option>
+                        <option value="140">Cold Brew - ₱140</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cup-size">Size:</label>
+                    <select id="cup-size">
+                        <option value="0">Regular (12 oz)</option>
+                        <option value="20">Large (16 oz) [+#20]</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" id="quantity" value="1" min="1" max="20">
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" id="add-shot"> Extra Espresso Shot (+₱30)
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="discount-code">Promo Code (Try 'DEBAA10'):</label>
+                    <input type="text" id="discount-code" placeholder="Enter code">
+                </div>
+
+                <!-- Event Trigger Button -->
+                <button type="button" id="calc-btn" class="btn">Calculate Total & Summary</button>
+            </form>
+
+            <!-- Dynamic Output area updated by PyScript -->
+            <div id="receipt-output" class="receipt" style="display: none;"></div>
+        </div>
+    </section>
+
+    <!-- Interactive Feedback Form -->
+    <section id="contact" class="container">
+        <h2>Customer Feedback</h2>
+        <div class="card">
+            <div class="form-group">
+                <label for="customer-name">Your Name:</label>
+                <input type="text" id="customer-name" placeholder="Juan Dela Cruz">
+            </div>
+            <div class="form-group">
+                <label for="customer-msg">Feedback / Inquiry:</label>
+                <textarea id="customer-msg" rows="3" placeholder="Tell us what you think!"></textarea>
+            </div>
+            <button type="button" id="submit-feedback-btn" class="btn btn-secondary">Submit Feedback</button>
+
+            <div id="feedback-alert" class="alert-box" style="display: none;"></div>
+        </div>
+    </section>
+
+    <!-- PyScript Module Loading -->
+    <script type="py" src="./main.py" config='{"packages":[]}'></script>
+</body>
+</html>
